@@ -1,0 +1,356 @@
+/* =========================================
+   VARIABLES — paleta y tipografía inspiradas
+   en la invitación (verde oliva, dorado, crema)
+   ========================================= */
+:root {
+  --color-fondo: #f8f6f1;
+  --color-texto: #302c26;
+  --color-verde: #4d5a38;
+  --color-verde-claro: #8b9878;
+  --color-dorado: #b7924f;
+  --color-borde: #e2ddce;
+  --fuente-script: 'Mrs Saint Delafield', cursive;
+  --fuente-cuerpo: 'Cormorant Garamond', Georgia, serif;
+  --ancho-max: 720px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--color-fondo);
+  color: var(--color-texto);
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+/* ---------- CABECERA ---------- */
+.hero {
+  text-align: center;
+  padding: 2rem 1.5rem 3rem;
+}
+
+.hero-imagen-placeholder {
+  width: 100%;
+  max-width: 500px;
+  height: 140px;
+  margin: 0 auto 1.5rem;
+  border: 1.5px dashed var(--color-dorado);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f2efe6;
+  color: var(--color-verde-claro);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Contenedor de la imagen de cabecera (cenefa) con degradado de
+   transición hacia el color de fondo, para que el borde inferior de
+   la foto no corte en seco contra el resto de la página. */
+.hero-imagen-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto 1.5rem;
+}
+
+.hero-imagen-wrap .hero-imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0;
+}
+
+.hero-imagen-wrap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60px; /* alto de la zona de transición; ajustar a ojo según la imagen */
+  background: linear-gradient(to bottom, transparent, var(--color-fondo));
+  pointer-events: none;
+}
+
+.hero-imagen {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  margin-bottom: 1.5rem;
+}
+
+.hero-eyebrow {
+  margin: 0;
+  font-size: 1rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--color-texto);
+}
+
+.hero-nombres {
+  font-family: var(--fuente-script);
+  font-weight: 400;
+  font-size: clamp(3.2rem, 11vw, 6rem);
+  color: var(--color-verde);
+  margin: 0.5rem 0;
+  line-height: 1;
+}
+
+.hero-nombres span {
+  color: var(--color-verde-claro);
+  font-size: 0.6em;
+  padding: 0 0.15em;
+}
+
+.hero-fecha {
+  margin-top: 0.5rem;
+  font-size: 1.15rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-texto);
+}
+
+.hero-hora {
+  margin-top: 0.25rem;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-verde);
+}
+
+/* ---------- NAVEGACIÓN POR PESTAÑAS ---------- */
+.tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  padding: 0 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--color-borde);
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+}
+
+.tab {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: none;
+  border: none;
+  color: var(--color-texto);
+  padding: 0.5rem 0.25rem;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab[aria-selected="true"] {
+  color: var(--color-verde);
+}
+
+.tab[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: var(--color-dorado);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 2px;
+}
+
+/* ---------- CONTENIDO / PESTAÑAS ---------- */
+main {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.panel {
+  padding: 2.5rem 0;
+  animation: aparecer 0.35s ease;
+}
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.panel h2 {
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: var(--color-texto);
+}
+
+.detalle {
+  margin-bottom: 1.75rem;
+}
+
+.detalle h3 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-dorado);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* fila de Día / Lugar / Hora, al estilo de la invitación */
+.franja {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.hero-franja {
+  margin-top: 2rem;
+  margin-bottom: 0;
+}
+
+.franja-item {
+  padding: 0 1.5rem;
+  border-left: 1px solid var(--color-dorado);
+}
+
+.franja-item:first-child {
+  border-left: none;
+}
+
+.franja-item h3 {
+  font-family: var(--fuente-script);
+  font-size: 1.8rem;
+  color: var(--color-texto);
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.franja-item p {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 1rem;
+}
+
+/* ---------- FORMULARIO RSVP ---------- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 1.5rem;
+}
+
+form label {
+  font-size: 0.95rem;
+  margin-top: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-texto);
+}
+
+form input,
+form select,
+form textarea {
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.1rem;
+  padding: 0.6rem 0.7rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  background: #fff;
+  color: var(--color-texto);
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+  outline: 2px solid var(--color-dorado);
+  outline-offset: 1px;
+}
+
+button[type="submit"] {
+  margin-top: 1.75rem;
+  padding: 0.75rem 2rem;
+  background: var(--color-verde);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--fuente-cuerpo);
+  font-size: 1.05rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  align-self: center;
+  transition: opacity 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  opacity: 0.88;
+}
+
+button[type="submit"]:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.rsvp-mensaje {
+  margin-top: 1rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.rsvp-mensaje.ok {
+  color: var(--color-verde);
+}
+
+.rsvp-mensaje.error {
+  color: #b3403f;
+}
+
+/* ---------- PIE ---------- */
+footer {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  color: var(--color-dorado);
+  font-family: var(--fuente-script);
+  font-size: 1.6rem;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+  .hero {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .franja {
+    gap: 0.5rem;
+  }
+
+  .franja-item {
+    padding: 0 0.75rem;
+  }
+
+  .tabs {
+    gap: 0.4rem 0.75rem;
+  }
+
+  .tab {
+    font-size: 0.85rem;
+  }
+}

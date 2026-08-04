@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sandra &amp; Andrés · Nos casamos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================= -->
+  <!-- CABECERA / PORTADA            -->
+  <!-- ============================= -->
+  <header class="hero">
+    <div class="hero-imagen-wrap">
+    <img class="hero-imagen" src="images/cenefa.png" alt="">
+    </div>
+    <!-- <div class="hero-imagen-placeholder">
+      <span>Imagen / cenefa floral<br>(sustituir por imagenes/cenefa.jpg)</span>
+    </div> -->
+
+    <h1 class="hero-nombres">Sandra <span>y</span> Andrés</h1>
+
+    <div class="franja hero-franja">
+      <div class="franja-item">
+        <h3>Día:</h3>
+        <p>3 de octubre</p>
+      </div>
+      <div class="franja-item">
+        <h3>Lugar:</h3>
+        <p>El Nidito</p>
+      </div>
+      <div class="franja-item">
+        <h3>Hora:</h3>
+        <p>13:00h</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================= -->
+  <!-- NAVEGACIÓN POR PESTAÑAS       -->
+  <!-- ============================= -->
+  <nav class="tabs" role="tablist" aria-label="Secciones de la web">
+    <button class="tab" role="tab" id="tab-historia" aria-controls="panel-historia" aria-selected="false">Historia</button>
+    <button class="tab" role="tab" id="tab-rsvp" aria-controls="panel-rsvp" aria-selected="true">Confirmación</button>
+    <button class="tab" role="tab" id="tab-ubicacion" aria-controls="panel-ubicacion" aria-selected="false">Ubicación</button>
+    <button class="tab" role="tab" id="tab-etiqueta" aria-controls="panel-etiqueta" aria-selected="false">Etiqueta</button>
+    <button class="tab" role="tab" id="tab-alojamiento" aria-controls="panel-alojamiento" aria-selected="false">Alojamiento</button>
+  </nav>
+
+  <main>
+
+    <!-- ============================= -->
+    <!-- PESTAÑA: NUESTRA HISTORIA     -->
+    <!-- ============================= -->
+    <section id="panel-historia" class="panel" role="tabpanel" aria-labelledby="tab-historia" hidden>
+      <h2>Nuestra historia</h2>
+      <p>
+        TODO: contad brevemente vuestra historia. Este es un párrafo de
+        ejemplo que podéis sustituir por vuestro propio texto.
+      </p>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PESTAÑA: CONFIRMACIÓN (RSVP)  -->
+    <!-- ============================= -->
+    <section id="panel-rsvp" class="panel" role="tabpanel" aria-labelledby="tab-rsvp">
+      <h2>Confirmar asistencia</h2>
+      <p>Por favor, confirmadnos antes del DD de Mes.</p>
+
+      <form id="rsvp-form">
+        <label for="nombre">Nombre y apellidos *</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="asiste">¿Asistirás? *</label>
+        <select id="asiste" name="asiste" required>
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="si">Sí, allí estaré</option>
+          <option value="no">No podré asistir</option>
+        </select>
+
+        <label for="acompanantes">Número de acompañantes (sin contarte a ti)</label>
+        <input type="number" id="acompanantes" name="acompanantes" min="0" value="0">
+
+        <label for="alergias">Alergias o restricciones alimentarias</label>
+        <textarea id="alergias" name="alergias" rows="2"></textarea>
+
+        <label for="comentario">Comentario (opcional)</label>
+        <textarea id="comentario" name="comentario" rows="3"></textarea>
+
+        <button type="submit" id="rsvp-submit">Enviar confirmación</button>
+      </form>
+
+      <p id="rsvp-mensaje" class="rsvp-mensaje" role="status"></p>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PESTAÑA: UBICACIÓN            -->
+    <!-- ============================= -->
+    <section id="panel-ubicacion" class="panel" role="tabpanel" aria-labelledby="tab-ubicacion" hidden>
+      <div class="franja">
+        <div class="franja-item">
+          <h3>Día</h3>
+          <p>3 de octubre</p>
+        </div>
+        <div class="franja-item">
+          <h3>Lugar</h3>
+          <p>El Nidito</p>
+        </div>
+        <div class="franja-item">
+          <h3>Hora</h3>
+          <p>13:00h</p>
+        </div>
+      </div>
+
+      <div class="detalle">
+        <h3>Ceremonia</h3>
+        <p>Hora: TODO</p>
+        <p>Lugar: TODO — nombre del lugar</p>
+        <p>Dirección: TODO — dirección completa</p>
+      </div>
+
+      <div class="detalle">
+        <h3>Celebración</h3>
+        <p>Hora: TODO</p>
+        <p>Lugar: TODO — nombre del lugar</p>
+        <p>Dirección: TODO — dirección completa</p>
+      </div>
+
+      <!-- TODO: opcionalmente, incrustar un mapa de Google Maps aquí con un <iframe> -->
+
+      <div class="detalle">
+        <h3>Cómo llegar</h3>
+        <p>TODO: indicaciones, parking, transporte.</p>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PESTAÑA: ETIQUETA             -->
+    <!-- ============================= -->
+    <section id="panel-etiqueta" class="panel" role="tabpanel" aria-labelledby="tab-etiqueta" hidden>
+      <h2>Código de vestimenta</h2>
+      <div class="detalle">
+        <h3>Etiqueta</h3>
+        <p>TODO: por ejemplo, "Etiqueta / Cocktail". Añadid aquí cualquier
+        matización (colores a evitar, terreno del jardín, etc.).</p>
+      </div>
+    </section>
+
+    <!-- ============================= -->
+    <!-- PESTAÑA: ALOJAMIENTO          -->
+    <!-- ============================= -->
+    <section id="panel-alojamiento" class="panel" role="tabpanel" aria-labelledby="tab-alojamiento" hidden>
+      <h2>Alojamiento</h2>
+      <div class="detalle">
+        <h3>Hoteles recomendados</h3>
+        <p>TODO: hoteles recomendados, códigos de descuento, etc.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Nos hace mucha ilusión compartir este día con vosotros</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

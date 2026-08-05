@@ -424,6 +424,42 @@ footer {
   font-size: 1.6rem;
 }
 
+/* ---------- FÓRMULA FINAL ---------- */
+.formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45em;
+  margin: 2.5rem 0 0;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.formula-fraccion {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.formula-num {
+  padding: 0 0.4em 0.1em;
+  border-bottom: 1px solid currentColor;
+}
+
+.formula-den {
+  padding-top: 0.15em;
+}
+
+.formula-overline {
+  padding-top: 0.05em;
+  border-top: 1px solid currentColor;
+}
+
+.formula sup {
+  font-size: 0.55em;
+  vertical-align: super;
+}
+
 /* ---------- CONTACTO ---------- */
 .contacto {
   max-width: var(--ancho-max);

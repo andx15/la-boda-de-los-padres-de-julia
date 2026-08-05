@@ -1,4 +1,15 @@
 /* =========================================
+   FUENTE PROPIA — Brittany Signature
+   ========================================= */
+@font-face {
+  font-family: 'Brittany Signature';
+  src: url('fonts/BrittanySignature.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* =========================================
    VARIABLES — paleta y tipografía inspiradas
    en la invitación (verde oliva, dorado, crema)
    ========================================= */
@@ -9,7 +20,7 @@
   --color-verde-claro: #8b9878;
   --color-dorado: #b7924f;
   --color-borde: #e2ddce;
-  --fuente-script: 'Mrs Saint Delafield', cursive;
+  --fuente-script: 'Brittany Signature', cursive;
   --fuente-cuerpo: 'Cormorant Garamond', Georgia, serif;
   --ancho-max: 720px;
 }
@@ -97,7 +108,7 @@ body {
 .hero-nombres {
   font-family: var(--fuente-script);
   font-weight: 400;
-  font-size: clamp(3.2rem, 11vw, 6rem);
+  font-size: clamp(3.2rem, 11vw, 4rem);
   color: var(--color-verde);
   margin: 0.5rem 0;
   line-height: 1;
@@ -249,6 +260,56 @@ main {
   font-size: 1rem;
 }
 
+/* ---------- UBICACIÓN / MAPA ---------- */
+.ubicacion-intro {
+  text-align: center;
+}
+
+.ubicacion-intro p {
+  margin: 0.5rem 0;
+}
+
+.mapa {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  margin: 0 auto 2rem;
+  border: 1px solid var(--color-borde);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(48, 44, 38, 0.08);
+}
+
+.mapa-iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.ubicacion-cta {
+  text-align: center;
+}
+
+.boton-mapa {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.75rem;
+  background: var(--color-verde);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: opacity 0.2s ease;
+}
+
+.boton-mapa:hover {
+  opacity: 0.88;
+}
+
 /* ---------- FORMULARIO RSVP ---------- */
 form {
   display: flex;
@@ -282,6 +343,37 @@ form select:focus,
 form textarea:focus {
   outline: 2px solid var(--color-dorado);
   outline-offset: 1px;
+}
+
+.form-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.form-checkbox input[type="checkbox"] {
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.15rem;
+  flex-shrink: 0;
+  accent-color: var(--color-verde);
+  cursor: pointer;
+}
+
+.form-checkbox label {
+  margin-top: 0;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.form-nota {
+  margin: 0.4rem 0 0 1.75rem;
+  font-size: 0.95rem;
+  color: var(--color-verde-claro);
+  line-height: 1.5;
 }
 
 button[type="submit"] {
@@ -330,6 +422,51 @@ footer {
   color: var(--color-dorado);
   font-family: var(--fuente-script);
   font-size: 1.6rem;
+}
+
+/* ---------- CONTACTO ---------- */
+.contacto {
+  max-width: var(--ancho-max);
+  margin: 0 auto;
+  padding: 0 1.5rem 3.5rem;
+  text-align: center;
+  border-top: 1px solid var(--color-borde);
+}
+
+.contacto > p {
+  margin: 2.5rem 0 1.5rem;
+  color: var(--color-texto);
+}
+
+.contacto-telefonos {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem 3rem;
+}
+
+.contacto-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.contacto-nombre {
+  font-family: var(--fuente-script);
+  font-size: 1.8rem;
+  color: var(--color-verde);
+  line-height: 1;
+}
+
+.contacto-item a {
+  color: var(--color-texto);
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  font-size: 1.05rem;
+}
+
+.contacto-item a:hover {
+  color: var(--color-dorado);
 }
 
 /* ---------- RESPONSIVE ---------- */

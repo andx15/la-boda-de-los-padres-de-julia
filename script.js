@@ -33,7 +33,10 @@ form.addEventListener("submit", async (event) => {
   const datos = {
     nombre: form.nombre.value.trim(),
     asiste: form.asiste.value,
+    menu: form.menu.value,
     alergias: form.alergias.value.trim(),
+    alojamiento: form.alojamiento.checked ? "sí" : "no",
+    comidaDiaSiguiente: form["comida-dia-siguiente"].checked ? "sí" : "no",
     comentario: form.comentario.value.trim(),
   };
 

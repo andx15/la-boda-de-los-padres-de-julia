@@ -6,7 +6,7 @@
   <title>Sandra &amp; Andrés · Nos casamos</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -26,15 +26,15 @@
 
     <div class="franja hero-franja">
       <div class="franja-item">
-        <h3>Día:</h3>
+        <h3>Día</h3>
         <p>3 de octubre</p>
       </div>
       <div class="franja-item">
-        <h3>Lugar:</h3>
-        <p>El Nidito</p>
+        <h3>Lugar</h3>
+        <p>El Nido</p>
       </div>
       <div class="franja-item">
-        <h3>Hora:</h3>
+        <h3>Hora</h3>
         <p>13:00h</p>
       </div>
     </div>
@@ -44,7 +44,6 @@
   <!-- NAVEGACIÓN POR PESTAÑAS       -->
   <!-- ============================= -->
   <nav class="tabs" role="tablist" aria-label="Secciones de la web">
-    <button class="tab" role="tab" id="tab-historia" aria-controls="panel-historia" aria-selected="false">Historia</button>
     <button class="tab" role="tab" id="tab-rsvp" aria-controls="panel-rsvp" aria-selected="true">Confirmación</button>
     <button class="tab" role="tab" id="tab-ubicacion" aria-controls="panel-ubicacion" aria-selected="false">Ubicación</button>
     <button class="tab" role="tab" id="tab-etiqueta" aria-controls="panel-etiqueta" aria-selected="false">Etiqueta</button>
@@ -54,22 +53,11 @@
   <main>
 
     <!-- ============================= -->
-    <!-- PESTAÑA: NUESTRA HISTORIA     -->
-    <!-- ============================= -->
-    <section id="panel-historia" class="panel" role="tabpanel" aria-labelledby="tab-historia" hidden>
-      <h2>Nuestra historia</h2>
-      <p>
-        TODO: contad brevemente vuestra historia. Este es un párrafo de
-        ejemplo que podéis sustituir por vuestro propio texto.
-      </p>
-    </section>
-
-    <!-- ============================= -->
     <!-- PESTAÑA: CONFIRMACIÓN (RSVP)  -->
     <!-- ============================= -->
     <section id="panel-rsvp" class="panel" role="tabpanel" aria-labelledby="tab-rsvp">
       <h2>Confirmar asistencia</h2>
-      <p>Por favor, confirmadnos antes del DD de Mes.</p>
+      <p>Por favor, confirmad si podremos contar con vosotros en el evento.</p>
 
       <form id="rsvp-form">
         <label for="nombre">Nombre y apellidos *</label>
@@ -82,11 +70,28 @@
           <option value="no">No podré asistir</option>
         </select>
 
-        <label for="acompanantes">Número de acompañantes (sin contarte a ti)</label>
-        <input type="number" id="acompanantes" name="acompanantes" min="0" value="0">
+        <label for="menu">Preferencia de plato principal</label>
+        <select id="menu" name="menu">
+          <option value="" disabled selected>Selecciona una opción</option>
+          <option value="carne">Carrillada glaseada al vino tinto con parmentier de patata y brotes frescos</option>
+          <option value="pescado">Lubina a la plancha con beurre blanc ibérica y brotes verdes</option>
+        </select>
 
         <label for="alergias">Alergias o restricciones alimentarias</label>
         <textarea id="alergias" name="alergias" rows="2"></textarea>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="alojamiento" name="alojamiento">
+          <label for="alojamiento">Me interesa que me ayudéis a buscar alojamiento en Sax</label>
+        </div>
+
+        <div class="form-checkbox">
+          <input type="checkbox" id="comida-dia-siguiente" name="comida-dia-siguiente">
+          <label for="comida-dia-siguiente">Me quedaré a comer el día siguiente</label>
+        </div>
+        <p class="form-nota">
+          Al día siguiente organizaremos una comida más informal en el mismo sitio, para aquellos a los que les sea práctico y nos quieran acompañar.
+        </p>
 
         <label for="comentario">Comentario (opcional)</label>
         <textarea id="comentario" name="comentario" rows="3"></textarea>
@@ -101,40 +106,40 @@
     <!-- PESTAÑA: UBICACIÓN            -->
     <!-- ============================= -->
     <section id="panel-ubicacion" class="panel" role="tabpanel" aria-labelledby="tab-ubicacion" hidden>
-      <div class="franja">
-        <div class="franja-item">
-          <h3>Día</h3>
-          <p>3 de octubre</p>
-        </div>
-        <div class="franja-item">
-          <h3>Lugar</h3>
-          <p>El Nidito</p>
-        </div>
-        <div class="franja-item">
-          <h3>Hora</h3>
-          <p>13:00h</p>
-        </div>
+
+      <div class="detalle ubicacion-intro">
+        <h3>El Nido</h3>
+        <p>
+          Nos casamos en <strong>El Nido</strong>, una finca escondida entre olivos
+          y almendros en un paraje de Sax, en el interior de Alicante. Es un rincón
+          tranquilo, rodeado de campo, donde la ceremonia y el banquete se celebrarán al aire libre
+          y la fiesta continuará bajo las estrellas.
+        </p>
+        <p>
+          Os dejamos la ruta marcada para que no os perdáis ni un minuto de la celebración.
+        </p>
       </div>
 
-      <div class="detalle">
-        <h3>Ceremonia</h3>
-        <p>Hora: TODO</p>
-        <p>Lugar: TODO — nombre del lugar</p>
-        <p>Dirección: TODO — dirección completa</p>
+      <div class="mapa">
+        <iframe
+          class="mapa-iframe"
+          src="https://maps.google.com/maps?q=38.5412686,-0.7914393&z=16&t=k&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Ubicación de El Nido"
+          allowfullscreen></iframe>
       </div>
 
-      <div class="detalle">
-        <h3>Celebración</h3>
-        <p>Hora: TODO</p>
-        <p>Lugar: TODO — nombre del lugar</p>
-        <p>Dirección: TODO — dirección completa</p>
-      </div>
-
-      <!-- TODO: opcionalmente, incrustar un mapa de Google Maps aquí con un <iframe> -->
-
-      <div class="detalle">
+      <div class="detalle ubicacion-cta">
         <h3>Cómo llegar</h3>
-        <p>TODO: indicaciones, parking, transporte.</p>
+        <p>
+          Desde Sax, seguid la ruta indicada hasta la finca. Dispondréis de
+          aparcamiento dentro del recinto pero agradeceremos que, en la medida de lo posible,
+          os organicéis para compartir coche y así garantizar que todos tenemos sitio de sobra.
+        </p>
+        <a class="boton-mapa" href="https://maps.app.goo.gl/ws88LCzfVfUoVS8DA" target="_blank" rel="noopener">
+          Abrir ruta en Google Maps
+        </a>
       </div>
     </section>
 
@@ -143,10 +148,32 @@
     <!-- ============================= -->
     <section id="panel-etiqueta" class="panel" role="tabpanel" aria-labelledby="tab-etiqueta" hidden>
       <h2>Código de vestimenta</h2>
+
+      <div class="detalle ubicacion-intro">
+        <p>
+          Nos encantará veros elegantes para la ocasión. Al tratarse de una boda,
+          os invitamos a vestir acorde al evento, pero recordad que la celebración
+          tiene lugar en una finca rural y al aire libre, así que os dejamos un par
+          de consejos para que estéis cómodos de principio a fin.
+        </p>
+      </div>
+
       <div class="detalle">
-        <h3>Etiqueta</h3>
-        <p>TODO: por ejemplo, "Etiqueta / Cocktail". Añadid aquí cualquier
-        matización (colores a evitar, terreno del jardín, etc.).</p>
+        <h3>Calzado</h3>
+        <p>
+          En la finca encontraréis distintos terrenos —zonas pavimentadas, de
+          tierra y de grava—, por lo que os recomendamos elegir un calzado con el
+          que os sintáis seguros y cómodos para moveros libremente.
+        </p>
+      </div>
+
+      <div class="detalle">
+        <h3>Un abrigo ligero</h3>
+        <p>
+          En estas fechas los días son cálidos, pero al caer la noche puede
+          refrescar. No estará de más llevar algo de abrigo ligero
+          para disfrutar de la fiesta hasta el final sin pasar frío.
+        </p>
       </div>
     </section>
 
@@ -155,9 +182,18 @@
     <!-- ============================= -->
     <section id="panel-alojamiento" class="panel" role="tabpanel" aria-labelledby="tab-alojamiento" hidden>
       <h2>Alojamiento</h2>
-      <div class="detalle">
-        <h3>Hoteles recomendados</h3>
-        <p>TODO: hoteles recomendados, códigos de descuento, etc.</p>
+
+      <div class="detalle ubicacion-intro">
+        <p>
+          Si estáis interesados en pernoctar en Sax tras el evento, podemos ayudaros a encontrar
+          alojamiento en distintas ubicaciones de la localidad. Las plazas son limitadas y
+          necesitamos coordinarlas con tiempo, así que os agradeceremos que nos
+          aviséis con antelación.
+        </p>
+        <p>
+          Si os interesa, escribidnos o indicádlo en el formulario de
+          confirmación y os daremos todos los detalles.
+        </p>
       </div>
     </section>
 
@@ -166,6 +202,23 @@
   <footer>
     <p>Nos hace mucha ilusión compartir este día con vosotros</p>
   </footer>
+
+  <!-- ============================= -->
+  <!-- CONTACTO                      -->
+  <!-- ============================= -->
+  <section class="contacto">
+    <p>En caso de cualquier cuestión o problema, no dudéis en contactar con nosotros.</p>
+    <div class="contacto-telefonos">
+      <div class="contacto-item">
+        <span class="contacto-nombre">Sandra</span>
+        <a href="tel:+34600123456">+34 600 084 447</a>
+      </div>
+      <div class="contacto-item">
+        <span class="contacto-nombre">Andrés</span>
+        <a href="tel:+34600654321">+34 629 888 605</a>
+      </div>
+    </div>
+  </section>
 
   <script src="script.js"></script>
 </body>

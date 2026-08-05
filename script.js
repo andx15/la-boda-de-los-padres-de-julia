@@ -21,7 +21,7 @@ tabs.forEach((tab) => {
 // =========================================
 // Google Apps Script
 // =========================================
-const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxVcGu0NFFfYfPGEwXv4Ga10axBZI28JwTw86fawUS8dqZCQUaHQxc0m7ilLfZ4qzNe/exec";
+const WEBHOOK_URL = "https://script.google.com/macros/s/AKfycby7sy7vnhNgPqvEPkvB_F1OEffpVvdI_dd6Qs0pB8HcsknOWsSST1BAhmq0tR-4gx6q/exec";
 
 const form = document.getElementById("rsvp-form");
 const submitBtn = document.getElementById("rsvp-submit");

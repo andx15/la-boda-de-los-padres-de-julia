@@ -1,9 +1,13 @@
 /* =========================================
    FUENTE PROPIA — Brittany Signature
+   La original mapea las vocales acentuadas al glifo sin tilde (é -> e),
+   así que se perdían los acentos. Esta versión añade á é í ó ú / Á É Í Ó Ú
+   componiendo el trazo del acento grave invertido.
+   El fichero original se conserva como BrittanySignature.woff2.
    ========================================= */
 @font-face {
   font-family: 'Brittany Signature';
-  src: url('fonts/BrittanySignature.woff2') format('woff2');
+  src: url('fonts/BrittanySignature-acentos.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -448,11 +452,6 @@ footer {
 
 .formula-den {
   padding-top: 0.15em;
-}
-
-.formula-overline {
-  padding-top: 0.05em;
-  border-top: 1px solid currentColor;
 }
 
 .formula sup {

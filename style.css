@@ -420,12 +420,27 @@ button[type="submit"]:disabled {
 }
 
 /* ---------- PIE ---------- */
+/* La foto de fondo lleva un velo verde oliva por delante (el primer
+   degradado del background-image): integra el azul de la foto en la
+   paleta de la web y asegura que el texto en blanco se lea sobre
+   cualquier zona, incluidos el cielo y el agua. */
 footer {
   text-align: center;
-  padding: 3rem 1.5rem;
-  color: var(--color-dorado);
+  padding: 4.5rem 1.5rem;
+  color: #fff;
   font-family: var(--fuente-script);
   font-size: 1.6rem;
+  background-image:
+    linear-gradient(rgba(77, 90, 56, 0.62), rgba(77, 90, 56, 0.62)),
+    url('images/fondo_pie.jpeg');
+  background-size: cover;
+  /* El 78% horizontal solo actúa en pantallas estrechas, donde la foto
+     sobra por los lados: sin él, el recorte deja a Sandra fuera de cuadro.
+     En pantallas anchas la foto se escala por ancho y no hay nada que
+     desplazar, así que el desktop no se ve afectado. */
+  background-position: 78% 45%;
+  background-repeat: no-repeat;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
 }
 
 /* ---------- FÓRMULA FINAL ---------- */

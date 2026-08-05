@@ -2,6 +2,7 @@
 // PESTAÑAS
 // =========================================
 const tabs = document.querySelectorAll(".tab");
+const nav = document.querySelector(".tabs");
 
 tabs.forEach((tab) => {
   tab.addEventListener("click", () => {
@@ -15,6 +16,13 @@ tabs.forEach((tab) => {
     tab.setAttribute("aria-selected", "true");
     const panel = document.getElementById(tab.getAttribute("aria-controls"));
     panel.hidden = false;
+
+    // Con el menú anclado se puede cambiar de pestaña estando a media
+    // página; en ese caso subimos hasta el menú para empezar el panel
+    // nuevo desde arriba. Si aún se ve la portada, no tocamos el scroll.
+    if (nav.getBoundingClientRect().top <= 0) {
+      window.scrollTo(0, nav.offsetTop);
+    }
   });
 });
 

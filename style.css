@@ -141,15 +141,21 @@ body {
 }
 
 /* ---------- NAVEGACIÓN POR PESTAÑAS ---------- */
+/* El menú sube con la portada y, al llegar arriba del todo, queda
+   anclado (sticky) mientras se recorre el resto de la página.
+   La barra ocupa todo el ancho —y no los 720px del contenido— para que
+   nada (p. ej. la foto del pie) asome por los lados al pasar por detrás. */
 .tabs {
+  position: sticky;
+  top: 0;
+  z-index: 20;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 0.5rem 1rem;
-  padding: 0 1.5rem 1.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--color-fondo);
   border-bottom: 1px solid var(--color-borde);
-  max-width: var(--ancho-max);
-  margin: 0 auto;
 }
 
 .tab {

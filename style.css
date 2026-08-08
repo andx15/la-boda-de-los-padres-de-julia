@@ -438,7 +438,7 @@ footer {
   font-size: 1.6rem;
   background-image:
     linear-gradient(rgba(77, 90, 56, 0.62), rgba(77, 90, 56, 0.62)),
-    url('images/fondo_pie_4.jpeg');
+    url('images/fondo_pie_2.jpeg');
   background-size: cover;
   /* El 78% horizontal solo actúa en pantallas estrechas, donde la foto
      sobra por los lados: sin él, el recorte deja a Sandra fuera de cuadro.
